@@ -3,4 +3,6 @@
     
     <string name="app_name">Android Visual Bookmarks</string>
 <string name="snapshot_text">Snapshot</string>
+<string name="widget_name">Android Visual Bookmarks</string>
+<string name="widget_header">Android Visual Bookmarks</string>
 </resources>

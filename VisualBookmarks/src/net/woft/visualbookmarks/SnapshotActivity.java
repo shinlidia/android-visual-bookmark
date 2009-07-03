@@ -2,7 +2,6 @@ package net.woft.visualbookmarks;
 
 import android.app.Activity;
 import android.content.ContentResolver;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.Browser;
@@ -19,7 +18,6 @@ public class SnapshotActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		startService(new Intent(this, SnapshotService.class));
 		findViewById(R.id.snapshot_button).setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
 				ContentResolver cr = getContentResolver();
@@ -35,12 +33,6 @@ public class SnapshotActivity extends Activity {
 		});
 	}
 	
-	@Override
-	protected void onDestroy() {
-		stopService(new Intent(this, SnapshotService.class));
-		super.onDestroy();
-	}
-
 	@Override
 	protected void onResume() {
 		super.onResume();

@@ -11,9 +11,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <service android:name="SnapshotService"></service>
-</application>
+    	<service android:name="SnapshotService"></service>
+		<receiver android:name="BookmarkWidget" android:label="@string/widget_name">
+			<meta-data android:name="android.appwidget.provider" android:resource="@xml/widget"></meta-data>
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+			</intent-filter>
+		</receiver>
+	</application>
     <uses-sdk android:minSdkVersion="3" />
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-<uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"></uses-permission>
 </manifest> 
